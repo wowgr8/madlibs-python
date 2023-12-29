@@ -1,7 +1,7 @@
 with open("story.txt", "r") as f: 
   story = f.read()
 
-words = []
+words = set()
 start_of_word = -1
 
 target_start = "<"
@@ -18,7 +18,7 @@ for i, char in enumerate(story):
         # Extract the word from start position to the current position (inclusive)
         word = story[start_of_word: i + 1]
         # Append the extracted word to the 'words' list
-        words.append(word)
+        words.add(word)
         # Reset the start position for the next word
         start_of_word = -1
 
